@@ -1,12 +1,23 @@
 const Index = ({scenarios}) => {
     return (
-        <div>
+        <div className="container">
             <h1>Mes scénarios</h1>
-            <ul>
+            <table className="table">
+                <thead>
+                <tr>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Description</th>
+                </tr>
+                </thead>
+                <tbody>
                 {scenarios.data.map((scenario) => (
-                    <li key={scenario.id}>{scenario.attributes.title}--{scenario.attributes.description}</li>
+                    <tr key={scenario.id}>
+                        <td>{scenario.attributes.title}</td>
+                        <td>{scenario.attributes.description}</td>
+                    </tr>
                 ))}
-            </ul>
+                </tbody>
+            </table>
         </div>
     );
 };
